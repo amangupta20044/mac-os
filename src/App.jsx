@@ -3,6 +3,7 @@ import "./app.scss"
 import Dock from './components/Dock'
 import NavBar from './components/NavBar'
 import MacWindows from './components/windows/MacWindows'
+import Github from './components/windows/Github'
 function App() {
 
 
@@ -10,9 +11,7 @@ function App() {
     <main>
       <NavBar />
       <Dock />
-      <MacWindows>
-        <h1>hmlo ji</h1>
-      </MacWindows>
+      <Github />
     </main>
   )
 }
