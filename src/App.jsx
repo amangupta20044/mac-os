@@ -7,17 +7,27 @@ import Github from './components/windows/Github'
 import Notes from './components/windows/Notes'
 import Resume from './components/windows/Resume'
 import Spotify from './components/windows/Spotify'
+import Cli from './components/windows/Cli'
 function App() {
+  const [windowState, setWindowState] = useState({
+    github:false,
+    notes:false,
+    resume:false,
+    spotify:false,
+    cli:false,
 
+  })
 
   return (
     <main>
       <NavBar />
-      <Dock />
-      <Github />
-      <Notes />
-      <Resume />
-      <Spotify />
+      
+      <Dock windowState={windowState} setWindowState={setWindowState} />
+      {windowState.github && <Github windowName="github" windowState={windowState} setWindowState={setWindowState} />}
+      {windowState.notes && <Notes windowName="notes" windowState={windowState} setWindowState={setWindowState} />}
+      {windowState.resume && <Resume windowName="resume" windowState={windowState} setWindowState={setWindowState} />}
+      {windowState.spotify && <Spotify windowName="spotify" windowState={windowState} setWindowState={setWindowState} />}
+      {windowState.cli && <Cli windowName="cli" windowState={windowState} setWindowState={setWindowState} />}
     </main>
   )
 }
